@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from '../screens/Home';
 import Cart from '../screens/Cart';
+import Account from '../screens/Account'
 
 
 const Tab = createBottomTabNavigator();
@@ -24,27 +25,15 @@ const Tabs = () => {
                 backgroundColor: '#5eb2bf',
                 height: 90,
                 borderRadius: 15,
-                ...styles.shadow
 
         } }}>
             <Tab.Screen name="Home" component={Home}/>
             <Tab.Screen name="Cart" component={Cart}/>
+            <Tab.Screen name="Account" component={Account}/>
         </Tab.Navigator>
     );
 
 }
 
-const styles = StyleSheet.create({
-    shadow:{
-        shadowColor: 'black',
-        shadowOffset: {
-            width: 0,
-            height: 10,
-        },
-        shadowOpacity:1,
-        shadowRadius: 3.5,
-        elevation: 0
-     }
-});
 
 export default Tabs;
