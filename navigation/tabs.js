@@ -1,6 +1,7 @@
 import React from 'react';
 import{StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialIcons, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 
 
 import Home from '../screens/Home';
@@ -13,23 +14,44 @@ const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
     return(
-        <Tab.Navigator 
+        <Tab.Navigator
+         
         screenOptions={{
-            showLabel: false, 
+            
+            
+            headerShown: false,
+            tabBarShowLabel: false,
             tabBarStyle: {
                 position: 'absolute',
-                bottom: 25,
-                left: 20,
-                right: 20,
-                elevation: 0,
-                backgroundColor: '#5eb2bf',
-                height: 90,
-                borderRadius: 15,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                backgroundColor: '#fff',
+                height: 70,
+                
 
         } }}>
-            <Tab.Screen name="Home" component={Home}/>
-            <Tab.Screen name="Cart" component={Cart}/>
-            <Tab.Screen name="Account" component={Account}/>
+            <Tab.Screen name="Home" component={Home} options= {{
+                tabBarIcon: ({focused, tintColor}) => (
+                    <View>
+                        <MaterialIcons name="home" size={24} color="#4892d4" />
+                    </View>
+                ),
+            }} />
+            <Tab.Screen name="Cart" component={Cart} options= {{
+                tabBarIcon: ({focused, tintColor}) => (
+                    <View>
+                        <Ionicons name="cart" size={24} color="#4892d4" />
+                    </View>
+                ),
+            }} />
+            <Tab.Screen name="Account" component={Account} options= {{
+                tabBarIcon: ({focused, tintColor}) => (
+                    <View>
+                        <MaterialCommunityIcons name="account" size={24} color="#4892d4" />
+                    </View>
+                ),
+            }} />
         </Tab.Navigator>
     );
 
