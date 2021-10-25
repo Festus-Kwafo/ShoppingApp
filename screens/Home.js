@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Platform } from 'react-native';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
@@ -37,16 +36,14 @@ export default function App() {
     </View>
     <View style={{
       justifyContent: "space-between",
-
-      paddingTop: 20,
+      paddingTop: 30,
       flexDirection: "row"
     }}>
       <View style={{
         flex: 1,
         height: 300,
-        
         backgroundColor: "red",
-        paddingRight: 20,
+        paddingRight: 60,
       }}>
       
       </View>
@@ -58,6 +55,7 @@ export default function App() {
       }}>
       
       </View>
+      
     </View>
     </View>
   );

@@ -1,24 +1,20 @@
 import React from 'react';
 import{StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialIcons, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
-
+import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs';
+import { MaterialIcons, MaterialCommunityIcons, Ionicons,Feather } from '@expo/vector-icons';
 
 import Home from '../screens/Home';
 import Cart from '../screens/Cart';
 import Account from '../screens/Account'
 
-
 const Tab = createBottomTabNavigator();
-
 
 const Tabs = () => {
     return(
         <Tab.Navigator
          
         screenOptions={{
-            
-            
+
             headerShown: false,
             tabBarShowLabel: false,
             tabBarStyle: {
@@ -31,18 +27,30 @@ const Tabs = () => {
                 
 
         } }}>
-            <Tab.Screen name="Home" component={Home} options= {{
+            <Tab.Screen 
+            name="Home" 
+            component={Home} 
+            options= {{
                 tabBarIcon: ({focused, tintColor}) => (
                     <View>
                         <MaterialIcons name="home" size={24} color="#4892d4" />
                     </View>
+                        
+                    
+                ),
+            }} />
+            <Tab.Screen name="Search" component={Cart} options= {{
+                tabBarIcon: ({focused, tintColor}) => (
+                    <View>
+                        <Feather name="search" size={24} color="#4892d4" />
+                    </View>
                 ),
             }} />
             <Tab.Screen name="Cart" component={Cart} options= {{
-                tabBarIcon: ({focused, tintColor}) => (
-                    <View>
+                tabBarIcon: ({focused}) => (
+                    
                         <Ionicons name="cart" size={24} color="#4892d4" />
-                    </View>
+                    
                 ),
             }} />
             <Tab.Screen name="Account" component={Account} options= {{
