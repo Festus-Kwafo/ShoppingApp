@@ -5,7 +5,7 @@ import {createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from './SplashScreen';
 import Login from './Login';
 import SignUp from './Signup';
-import Home from './Home';
+
 
 const RootStack = createStackNavigator();
 

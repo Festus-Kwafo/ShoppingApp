@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Platform, Dimensions, Image, ImageBackground } from 'react-native';
 import { Ionicons, AntDesign, Entypo } from '@expo/vector-icons';
 import {NavigationContainer} from '@react-navigation/native';
@@ -11,11 +12,12 @@ const Home = () => {
   return (
     
     <View style= {{
+      
       backgroundColor: "#fafbfc",
       flex: 1,
-      paddingTop: 40,
+      paddingTop: 60,
       paddingHorizontal: 20,
-    }} >
+    }} ><StatusBar backgroundColor="#fafbfc" barStyle= "light-content" />
     
      
     <View style={{

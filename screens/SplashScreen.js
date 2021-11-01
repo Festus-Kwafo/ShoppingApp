@@ -8,6 +8,7 @@ import * as Animatable from 'react-native-animatable';
 const SplashScreen = ({navigation}) => {
     return(
         <View style ={styles.container}>
+        <StatusBar backgroundColor="#143a5c" barStyle= "light-content" />
             <View style={styles.header}>
                 <Animatable.Image
                 animation = 'bounceIn'
@@ -20,11 +21,11 @@ const SplashScreen = ({navigation}) => {
                 <Text style={styles.text}>Sign in your account </Text>
                 <View style={styles.button}>
                 <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                    <LinearGradient colors={['#143a5c', '#2365a1']}
+                    <View
                     style={styles.signIn}>
                     <Text style={styles.textSign}>Get Started</Text>
                     <Ionicons name="arrow-forward" size={20} color="#fff" /> 
-                    </LinearGradient>
+                    </View>
                 </TouchableOpacity>
 
             </View>
@@ -84,6 +85,19 @@ textSign: {
 },
 button: {
     alignItems: 'flex-end',
-    marginTop: 30
+    marginTop: 30,
+    
+    backgroundColor: "#4892d4",
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        borderRadius: 10,
+        shadowColor: "#143a5c",
+      shadowOffset: {
+        width: 0,
+        height: 10,
+        }, 
+      shadowOpacity: 3.25,
+      shadowRadius: 3.5,
+      elevation: 3
 },
 });

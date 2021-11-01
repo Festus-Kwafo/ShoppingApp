@@ -45,6 +45,7 @@ const Login = ({navigation}) => {
 
   return (
     <View style={styles.container}>
+    <StatusBar backgroundColor="#143a5c" barStyle= "light-content" />
       <View style={styles.header}>
         <Text style={styles.text_header}>You're Welcome</Text>
       </View>
@@ -91,13 +92,19 @@ const Login = ({navigation}) => {
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <View style={styles.button}>
-          <LinearGradient 
-          colors={['#143a5c', '#2365a1']}
-          style={styles.signIn}>
-            <Text style={[styles.textSign, {color: '#fff'}]}>Sign In</Text>
-          </LinearGradient>
+          <Text style={[styles.textSign, {color: '#fff'}]}>Sign In</Text>
           </View>
         </TouchableOpacity>
+        <View style={{
+          padding: 10,
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
+          <Text>Don't have an Account? <Text style={{
+            color: "#143a5c",
+            margin: 5
+          }} onPress= {() => navigation.navigate('Signup')}> create Account</Text></Text>
+        </View>
         
       </View>
     </View>
@@ -160,7 +167,18 @@ const styles = StyleSheet.create({
   },
   button: {
       alignItems: 'center',
-      marginTop: 50
+      backgroundColor: "#4892d4",
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        borderRadius: 10,
+        shadowColor: "#143a5c",
+      shadowOffset: {
+        width: 0,
+        height: 10,
+        }, 
+      shadowOpacity: 3.25,
+      shadowRadius: 3.5,
+      elevation: 3
   },
   signIn: {
       width: '100%',
