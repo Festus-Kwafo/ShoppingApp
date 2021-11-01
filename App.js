@@ -13,9 +13,15 @@ const Stack = createStackNavigator();
 const App = () => {
   return(
     <NavigationContainer>
-    <RootStackScreen/>
+       <Stack.Navigator>
+        <Stack.Screen
+          name="RootStack"
+          component={RootStackScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Home" component={Tabs}/>
 
-    {/*<Tabs/>*/}    
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

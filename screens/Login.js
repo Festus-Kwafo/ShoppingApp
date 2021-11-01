@@ -5,7 +5,7 @@ import {LinearGradient} from 'expo-linear-gradient';
 import { Ionicons, AntDesign, Entypo, Feather } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [data, setData] = React.useState({
     email: "",
     password: "",
@@ -89,6 +89,7 @@ const Login = () => {
         </TouchableOpacity>
           
         </View>
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <View style={styles.button}>
           <LinearGradient 
           colors={['#143a5c', '#2365a1']}
@@ -96,6 +97,8 @@ const Login = () => {
             <Text style={[styles.textSign, {color: '#fff'}]}>Sign In</Text>
           </LinearGradient>
           </View>
+        </TouchableOpacity>
+        
       </View>
     </View>
   );

@@ -3,10 +3,11 @@ import { StyleSheet, Text, View, Platform, Dimensions, Image, ImageBackground } 
 import { Ionicons, AntDesign, Entypo } from '@expo/vector-icons';
 import {NavigationContainer} from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+
 const width = Dimensions.get('screen').width / 1.8 - 30;
 
 
-export default function Home() {
+const Home = () => {
   return (
     
     <View style= {{
@@ -168,6 +169,8 @@ export default function Home() {
   );
 
 }
+
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
