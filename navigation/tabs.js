@@ -20,7 +20,8 @@ const CustomTabBarButton = ({children, onPress}) => (
             width: 70,
             height: 70,
             borderRadius: 35,
-            backgroundColor: 'blue'
+            backgroundColor: '#4892d4',
+            ...styles.shadow
         }}>
         {children}
 
@@ -30,7 +31,7 @@ const CustomTabBarButton = ({children, onPress}) => (
 const Tabs = () => {
     return(
         <Tab.Navigator
-         
+
         screenOptions={{
 
             headerShown: false,
@@ -42,7 +43,8 @@ const Tabs = () => {
                 right: 0,
                 backgroundColor: '#fff',
                 height: 70,
-                
+                ...styles.shadow
+            
 
         } }}>
             <Tab.Screen 
@@ -53,21 +55,21 @@ const Tabs = () => {
                     <View>
                         <MaterialIcons name="home" size={24} color="#4892d4" />
                     </View>
-                        
-                    
                 ),
             }} />
-            <Tab.Screen name="Search" component={Cart} options= {{
+            <Tab.Screen name="Search" component={Cart} 
+            options= {{
                 tabBarIcon: ({focused, tintColor}) => (
                     <View>
                         <Feather name="search" size={24} color="#4892d4" />
                     </View>
                 ),
             }} />
-            <Tab.Screen name="Post" component={Cart} options= {{
+            <Tab.Screen name="Post" component={Cart} 
+            options= {{
                 tabBarIcon: ({focused, tintColor}) => (
                     <View>
-                        <Feather name="search" size={24} color="#4892d4" />
+                        <MaterialIcons name="keyboard-voice" size={24} color="#fff" />
                     </View>
                 ),
                 tabBarButton: (props) => (
@@ -91,6 +93,17 @@ const Tabs = () => {
     );
 
 }
-
+const styles = StyleSheet.create({
+    shadow: {
+        shadowColor: "#7a7574",
+        shadowOffset: {
+            width: 0,
+            height: 10,
+        }, 
+        shadowOpacity: 0.25,
+        shadowRadius: 3.25,
+        elevation: 3
+    }
+})
 
 export default Tabs;

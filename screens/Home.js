@@ -1,15 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View, Platform } from 'react-native';
-import { Ionicons, AntDesign } from '@expo/vector-icons';
+import { StyleSheet, Text, View, Platform, Dimensions, Image } from 'react-native';
+import { Ionicons, AntDesign, Entypo } from '@expo/vector-icons';
 import {NavigationContainer} from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+const width = Dimensions.get('screen').width / 1.8 - 30;
 
-export default function App() {
+export default function Home() {
   return (
     
     <View style= {{
-      backgroundColor: "#ebedf0",
+      backgroundColor: "#fafbfc",
       flex: 1,
-      paddingTop: 40,
+      paddingTop: 20,
       paddingHorizontal: 20,
     }} >
     
@@ -24,7 +26,7 @@ export default function App() {
 
     </View>
     <View style={{
-      paddingTop: 50,
+      paddingTop: 40,
       flexDirection: 'row',
       justifyContent: "space-between",
       alignItems: "center"
@@ -38,30 +40,61 @@ export default function App() {
       <AntDesign name="arrowright" size={24} color="#143a5c"/>
     </View>
     <View style={{
-      justifyContent: "space-between",
-      paddingTop: 30,
-      flexDirection: "row"
+      paddingTop: 50,
+      
+      flexDirection: 'row'
     }}>
-      <View style={{
-        flex: 1,
-        height: 300,
-        backgroundColor: "red",
-        paddingRight: 60,
+    <View style= {styles.card}>
+      <Image style={{
+        width: 160,
+        height: 220,
+        marginTop: -60,
+        borderRadius:10}} source={require('../assets/pngwing.com.png')} />
+      <TouchableOpacity style={styles.buttons}>
+          <Text style={{
+            color: '#fff',
+            fontWeight: "bold"
+          }}>NEW</Text>
+      </TouchableOpacity>
+      <Text style={{
+        paddingTop: 20,
+        color: '#143a5c',
+        fontWeight: 'bold',
+        fontSize: 15 
+        }}>Hallingdal Chair</Text>
+      <View style= {{
+        paddingTop: 2,
+        flexDirection: 'row'
       }}>
-      
+      <Entypo name="star" size={12} color="#e3d322" />
+      <Entypo name="star" size={12} color="#e3d322" />
+      <Entypo name="star" size={12} color="#e3d322" />
+      <Entypo name="star" size={12} color="#e3d322" />
+      <Entypo name="star" size={12} color="#e3d322" />
+
       </View>
-      <View style={{
-        flex: 2,
-        
-        height: 300,
-        backgroundColor: "blue"
-      }}>
-      
-      </View>
-      
+      <Text style={{
+        paddingTop: 20,
+        color: '#143a5c',
+        fontSize: 20,
+        fontWeight: 'bold'
+      }}>Hay
+      </Text>
+      <Text style={{
+        paddingTop: 2,
+        color: '#c9c9c3',
+        }}>$400
+        </Text>
+
+    </View> 
+    <View style= {styles.card}></View>
     </View>
+    
+       
     </View>
+    
   );
+
 }
 
 const styles = StyleSheet.create({
@@ -71,4 +104,41 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  card: {
+    height: 350,
+      backgroundColor: "white",
+      width,
+      marginHorizontal: 10,
+      borderRadius: 10,
+      marginBottom: 10,
+      padding: 15,
+  },
+  shadow: {
+    shadowColor: "#143a5c",
+    shadowOffset: {
+        width: 0,
+        height: 10,
+    }, 
+    shadowOpacity: 0.5,
+    shadowOpacity: 3.5,
+    elevation: 3
+  },
+  buttons: {
+    alignSelf: "baseline",
+        backgroundColor: "#4892d4",
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        borderRadius: 10,
+        shadowColor: "#143a5c",
+      shadowOffset: {
+        width: 0,
+        height: 10,
+        }, 
+      shadowOpacity: 3.25,
+      shadowRadius: 3.5,
+      elevation: 3
+        
+
+  }
 });
+
