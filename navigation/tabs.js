@@ -9,6 +9,24 @@ import Account from '../screens/Account'
 
 const Tab = createBottomTabNavigator();
 
+const CustomTabBarButton = ({children, onPress}) => (
+    <TouchableOpacity style={{
+        top: -30,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+    onPress={onPress}>
+        <View style={{
+            width: 70,
+            height: 70,
+            borderRadius: 35,
+            backgroundColor: 'blue'
+        }}>
+        {children}
+
+        </View>
+    </TouchableOpacity>
+);
 const Tabs = () => {
     return(
         <Tab.Navigator
@@ -45,6 +63,15 @@ const Tabs = () => {
                         <Feather name="search" size={24} color="#4892d4" />
                     </View>
                 ),
+            }} />
+            <Tab.Screen name="Post" component={Cart} options= {{
+                tabBarIcon: ({focused, tintColor}) => (
+                    <View>
+                        <Feather name="search" size={24} color="#4892d4" />
+                    </View>
+                ),
+                tabBarButton: (props) => (
+                <CustomTabBarButton {...props} />)  
             }} />
             <Tab.Screen name="Cart" component={Cart} options= {{
                 tabBarIcon: ({focused}) => (

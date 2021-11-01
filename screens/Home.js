@@ -1,15 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Platform } from 'react-native';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
+import {NavigationContainer} from '@react-navigation/native';
 
 export default function App() {
   return (
+    
     <View style= {{
       backgroundColor: "#ebedf0",
       flex: 1,
       paddingTop: 40,
       paddingHorizontal: 20,
     }} >
+    
      
     <View style={{
       flexDirection: 'row',
