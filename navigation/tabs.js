@@ -5,7 +5,8 @@ import { MaterialIcons, MaterialCommunityIcons, Ionicons,Feather } from '@expo/v
 
 import Home from '../screens/Home';
 import Cart from '../screens/Cart';
-import Account from '../screens/Account'
+import Account from '../screens/Account';
+import Search from '../screens/Search';
 
 const Tab = createBottomTabNavigator();
 
@@ -57,7 +58,7 @@ const Tabs = () => {
                     </View>
                 ),
             }} />
-            <Tab.Screen name="Search" component={Cart} 
+            <Tab.Screen name="Search" component={Search} 
             options= {{
                 tabBarIcon: ({focused, tintColor}) => (
                     <View>

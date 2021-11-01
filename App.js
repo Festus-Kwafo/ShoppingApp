@@ -12,9 +12,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return(
     <NavigationContainer>
-    <Tabs/>
-   
-    
+    <Tabs/>    
     </NavigationContainer>
   );
 }
