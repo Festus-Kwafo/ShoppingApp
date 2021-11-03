@@ -90,7 +90,7 @@ const Login = ({navigation}) => {
         </TouchableOpacity>
           
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate('Tabs')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <View style={styles.button}>
           <Text style={[styles.textSign, {color: '#fff'}]}>Sign In</Text>
           </View>

@@ -1,19 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Image, Platform, TextInput} from 'react-native';
-import {LinearGradient} from 'expo-linear-gradient';
-import { Ionicons, AntDesign, Entypo, Feather, MaterialIcons } from '@expo/vector-icons';
+import {AntDesign, Feather, MaterialIcons } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 
 const Signup = ({navigation}) => {
   const [data, setData] = React.useState({
+    fullname: "",
     email: "",
     password: "",
     check_textInputChange: false,
+    check_nameInputChange: false,
     secureTextEntry: true
   });
 
-  const textInputChange = (val) =>{
+  const textInputChange = (val, ) =>{
     if (val.length != 0 ){
       setData({
         ...data,
@@ -25,6 +26,22 @@ const Signup = ({navigation}) => {
         ...data,
         email:val,
         check_textInputChange:false
+      });
+    }
+  } 
+
+  const nameInputChange = (val, ) =>{
+    if (val.length != 0 ){
+      setData({
+        ...data,
+        fullname:val,
+        check_nameInputChange:true
+      });
+    } else {
+      setData({
+        ...data,
+        fullname:val,
+        check_nameInputChange:false
       });
     }
   } 
@@ -59,8 +76,8 @@ const Signup = ({navigation}) => {
             placeholder= "Your Fullname" 
             style={styles.textInput} 
             autoCapitalize='none' 
-            onChangeText= {(val) => textInputChange(val)} />
-        {data.check_textInputChange ? 
+            onChangeText= {(val) => nameInputChange(val)} />
+        {data.check_nameInputChange ? 
         <Animatable.View
           animation = 'bounceIn'>
         <Feather name="check-circle" size={20} color="#143a5c" />
@@ -133,7 +150,7 @@ const Signup = ({navigation}) => {
 
        </View>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Tabs')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
         <View style={[styles.button, {marginTop: 20}]}>
           <Text style={[styles.textSign, {color: '#fff'}]}>Sign Up</Text>
           </View>
