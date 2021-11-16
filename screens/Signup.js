@@ -9,9 +9,11 @@ const Signup = ({navigation}) => {
     fullname: "",
     email: "",
     password: "",
+    confirm_password: "",
     check_textInputChange: false,
     check_nameInputChange: false,
-    secureTextEntry: true
+    secureTextEntry: true, 
+    confirmTextEntry: true
   });
 
   const textInputChange = (val, ) =>{
@@ -53,10 +55,24 @@ const Signup = ({navigation}) => {
     });
   }
 
+  const handleConfirmPassword =(val) => {
+    setData({
+      ...data,
+      confirm_password: val
+    });
+  }
+
   const updateSecureTextEntry = () => {
     setData({
       ...data, 
       secureTextEntry: !data.secureTextEntry 
+    });
+  }
+
+  const updateConfirmTextEntry = () => {
+    setData({
+      ...data, 
+      confirmTextEntry: !data.confirmTextEntry 
     });
   }
 
@@ -136,15 +152,15 @@ const Signup = ({navigation}) => {
         <View style={styles.action}>
         <Feather name="lock" size={20} color="#143a5c" />
         <TextInput 
-            placeholder= "Your Password" 
-            secureTextEntry={data.secureTextEntry ? true : false} 
+            placeholder= "Confirm Your Password" 
+            confirmTextEntry={data.confirmTextEntry ? true : false} 
             style={styles.textInput} 
             autoCapitalize='none' 
-            onChangeText= {(val) => handlePasswordChange(val)}
+            onChangeText= {(val) => handleConfirmPassword(val)}
           
         />
-        <TouchableOpacity onPress = {updateSecureTextEntry}>
-        {data.secureTextEntry ? <Feather name="eye-off" size={20} color="#143a5c" />
+        <TouchableOpacity onPress = {updateConfirmTextEntry}>
+        {data.confirmTextEntry ? <Feather name="eye-off" size={20} color="#143a5c" />
         : <Feather name="eye" size={20} color="#143a5c" />}
         </TouchableOpacity>
 
