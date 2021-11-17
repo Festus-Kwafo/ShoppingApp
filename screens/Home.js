@@ -3,13 +3,15 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Platform, Dimensions, Image, ImageBackground } from 'react-native';
 import { Ionicons, AntDesign, Entypo } from '@expo/vector-icons';
 import {NavigationContainer} from '@react-navigation/native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import Counches from '../commons/Couches';
 
 const width = Dimensions.get('screen').width / 1.8 - 30;
 
 
 const Home = () => {
   return (
+    
     
     <View style= {{
       
@@ -29,6 +31,7 @@ const Home = () => {
      <Ionicons name="cart" size={24} color="#143a5c" />
 
     </View>
+    
     <View style={{
       paddingTop: 40,
       flexDirection: 'row',
@@ -43,98 +46,13 @@ const Home = () => {
       }}>New arrival</Text>
       <AntDesign name="arrowright" size={24} color="#143a5c"/>
     </View>
-    <View style={{
-      paddingTop: 50,
+    <ScrollView
+    horizontal 
+    showsHorizontalScrollIndicator={false}>
+    <Counches
       
-      flexDirection: 'row'
-    }}>
-    <View style= {styles.card}>
-      <Image style={{
-        width: 160,
-        height: 220,
-        marginTop: -60,
-        borderRadius:10}} source={require('../assets/pngwing.com.png')} />
-      <TouchableOpacity style={styles.buttons}>
-          <Text style={{
-            color: '#fff',
-            fontWeight: "bold"
-          }}>NEW</Text>
-      </TouchableOpacity>
-      <Text style={{
-        paddingTop: 20,
-        color: '#143a5c',
-        fontWeight: 'bold',
-        fontSize: 15 
-        }}>Hallingdal Chair</Text>
-      <View style= {{
-        paddingTop: 2,
-        flexDirection: 'row'
-      }}>
-      <Entypo name="star" size={12} color="#e3d322" />
-      <Entypo name="star" size={12} color="#e3d322" />
-      <Entypo name="star" size={12} color="#e3d322" />
-      <Entypo name="star" size={12} color="#e3d322" />
-      <Entypo name="star" size={12} color="#e3d322" />
-
-      </View>
-      <Text style={{
-        paddingTop: 20,
-        color: '#143a5c',
-        fontSize: 20,
-        fontWeight: 'bold'
-      }}>Hay
-      </Text>
-      <Text style={{
-        paddingTop: 2,
-        color: '#c9c9c3',
-        }}>$400
-        </Text>
-
-    </View> 
-    <View style= {styles.card}>
-    <Image style={{
-        width: 160,
-        height: 220,
-        marginTop: -60,
-        borderRadius:10}} source={require('../assets/drawer.png')} />
-      <TouchableOpacity style={styles.buttons}>
-          <Text style={{
-            color: '#fff',
-            fontWeight: "bold"
-          }}>NEW</Text>
-      </TouchableOpacity>
-      <Text style={{
-        paddingTop: 20,
-        color: '#143a5c',
-        fontWeight: 'bold',
-        fontSize: 15 
-        }}>Drawer Table</Text>
-      <View style= {{
-        paddingTop: 2,
-        flexDirection: 'row'
-      }}>
-      <Entypo name="star" size={12} color="#e3d322" />
-      <Entypo name="star" size={12} color="#e3d322" />
-      <Entypo name="star" size={12} color="#e3d322" />
-      <Entypo name="star" size={12} color="#e3d322" />
-      <Entypo name="star" size={12} color="#e3d322" />
-
-      </View>
-      <Text style={{
-        paddingTop: 20,
-        color: '#143a5c',
-        fontSize: 20,
-        fontWeight: 'bold'
-      }}>Ikea
-      </Text>
-      <Text style={{
-        paddingTop: 2,
-        color: '#c9c9c3',
-        }}>$560
-        </Text>
-    </View>
-    </View>
-    
+    />
+    </ScrollView>
     <View style={{
       paddingTop: 10,
       flexDirection: 'row',
@@ -169,6 +87,7 @@ const Home = () => {
     </View>
     
   );
+
 
 }
 
